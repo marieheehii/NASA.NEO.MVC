@@ -2,6 +2,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient("nasaneo", client =>
+{
+    client.BaseAddress = new Uri("https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=v2ph86MrHlGoaqBt8vUhAcuFHR0EppEEDGwVZ8PO");
+});
 
 var app = builder.Build();
 
